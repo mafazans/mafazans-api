@@ -8,6 +8,7 @@ import routes from './routes/index';
 import apiRoutes from './routes/api';
 import errorHandlers from './handlers/errorHandlers';
 
+
 const app = express();
 //enable cors
 app.use(cors());
