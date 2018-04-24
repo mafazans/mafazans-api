@@ -4,8 +4,8 @@
   "description": "Api for Mafazans portofolio",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon start.js --exec babel-node --presets es2015,stage-2",
-    "watch": "nodemon ./start.js --ignore public/",
+    "start": "node ./start.js",
+    "watch": "nodemon ./start.js --ignore public/ --exec babel-node --presets es2015,stage-2",
     "dev": "concurrently \"npm run watch\" --names \"💻,📦\" --prefix name"
   },
   "author": "mafazans",
