@@ -5,7 +5,7 @@ const postSchema = new mongoose.Schema({
 	title: {
 		type: String,
 		trim: true,
-		required: 'Enter the title!',
+		required: `Your post must have a title!`
 	},
 	content: {
 		type: String,

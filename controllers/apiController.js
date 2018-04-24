@@ -23,3 +23,4 @@ exports.getPost = async (req, res) => {
 	const post = await Post.find({ slug });
     res.json(post);
 };
+

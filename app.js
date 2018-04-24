@@ -6,6 +6,7 @@ import bodyParser from 'body-parser';
 import expressValidator from 'express-validator';
 import routes from './routes/index';
 import apiRoutes from './routes/api';
+import errorHandlers from './handlers/errorHandlers';
 
 const app = express();
 //enable cors
@@ -27,5 +28,9 @@ app.use(cookieParser());
 // After allllll that above middleware, we finally handle our own routes!
 app.use('/', routes);
 app.use('/api', apiRoutes);
+
+//mongo error handling middleware
+app.use(errorHandlers.notFound);
+app.use(errorHandlers.mongoError);
 
 module.exports = app;
