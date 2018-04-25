@@ -12,12 +12,12 @@ const postSchema = new mongoose.Schema({
 		trim: true,
 		required: 'You must enter the content!'
 	},
-	tags: [String],
-	slug: String,
 	photo: {
 		type: String,
 		required: 'Please upload a photo for your post!'
-	}
+	},
+	tags: [String],
+	slug: String
 	// author: {
 	// 	type: mongoose.Schema.ObjectId,
 	// 	ref: 'User',

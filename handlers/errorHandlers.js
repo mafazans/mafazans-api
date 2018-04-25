@@ -14,5 +14,5 @@ exports.mongoError = (err, req, res, next) => {
 	if(!err.errors) return next(err);
 
 	const errorKeys = Object.keys(err.errors);
-	errorKeys.forEach(key => res.status(422).send({ error: err.errors[key].message}));
+	errorKeys.forEach(key => res.status(422).send({ status: false ,message: err.errors[key].message}));
 };
