@@ -9,16 +9,20 @@ const postSchema = new mongoose.Schema({
 	},
 	content: {
 		type: String,
-		trim: true
+		trim: true,
+		required: 'You must enter the content!'
 	},
 	tags: [String],
 	slug: String,
-	photo: String,
-	author: {
-		type: mongoose.Schema.ObjectId,
-		ref: 'User',
-		required: 'You must have an author!'
+	photo: {
+		type: String,
+		required: 'Please upload a photo for your post!'
 	}
+	// author: {
+	// 	type: mongoose.Schema.ObjectId,
+	// 	ref: 'User',
+	// 	required: 'You must have an author!'
+	// }
 });
 
 postSchema.index({

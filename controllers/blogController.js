@@ -32,8 +32,8 @@ exports.resize = async(req, res, next) => {
 }
 
 exports.createPost = async (req, res) => {
-	// req.body.author = '5aa481c24538eb0ce1484a19';
-	req.body.author = req.user._id;
+	req.body.author = '5aa481c24538eb0ce1484a19';
+	// req.body.author = req.user._id;
 	const post = new Post(req.body);
 	await post.save();
 	res.json({status: true, message: `Successfully created - ${post.title} post`});
