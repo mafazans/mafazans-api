@@ -15,4 +15,6 @@ router.post('/post',
 	catchErrors(blogController.resize),
 	catchErrors(blogController.createPost));
 
+router.post('/comment', catchErrors(blogController.createComment));
+
 module.exports = router;

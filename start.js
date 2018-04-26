@@ -8,6 +8,7 @@ mongoose.connection.on('error', err => {
 
 import './models/Post';
 import './models/User';
+import './models/Comment';
 
 const app = require('./app');
 app.set('port', process.env.PORT || 7777);

@@ -17,7 +17,11 @@ const postSchema = new mongoose.Schema({
 		required: 'Please upload a photo for your post!'
 	},
 	tags: [String],
-	slug: String
+	slug: String,
+	created: {
+		type: Date,
+		default: Date.now
+	},
 	// author: {
 	// 	type: mongoose.Schema.ObjectId,
 	// 	ref: 'User',

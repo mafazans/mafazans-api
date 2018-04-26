@@ -9,7 +9,7 @@ exports.getUsers = async (req, res) => {
 
 exports.getUser = async (req, res) => {
 	const _id = req.params._id;
-	const user = await User.find({ _id });
+	const user = await User.findOne({ _id });
     res.json(user);
 };
 
@@ -20,7 +20,7 @@ exports.getPosts = async (req, res) => {
 
 exports.getPost = async (req, res) => {
 	const slug = req.params.slug;
-	const post = await Post.find({ slug });
+	const post = await Post.findOne({ slug });
     res.json(post);
 };
 
