@@ -7,9 +7,9 @@
   "description": "Api for Mafazans portofolio",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon server.js --exec babel-node",
+    "server": "nodemon start.js --exec babel-node",
     "heroku-postbuild": "npm install",
-    "start": "babel-node server.js",
+    "start": "babel-node start.js",
     "watch": "nodemon ./start.js --ignore public/ --exec babel-node --presets es2015,stage-2",
     "dev": "concurrently \"npm run watch\" --names \"💻,📦\" --prefix name"
   },
