@@ -8,7 +8,6 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon start.js --exec babel-node",
-    "heroku-postbuild": "npm install",
     "start": "babel-node start.js",
     "watch": "nodemon ./start.js --ignore public/ --exec babel-node --presets es2015,stage-2",
     "dev": "concurrently \"npm run watch\" --names \"💻,📦\" --prefix name"
@@ -24,6 +23,7 @@
     "express": "^4.16.3",
     "express-validator": "^5.1.2",
     "jimp": "^0.2.28",
+    "jsonwebtoken": "^8.2.1",
     "md5": "^2.2.1",
     "mongoose": "^5.0.15",
     "mongoose-mongodb-errors": "0.0.2",

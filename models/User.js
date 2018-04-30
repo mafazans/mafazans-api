@@ -17,14 +17,13 @@ const userSchema = new Schema({
 	},
 	password: {
 		type: String,
-		required: true
+		required: 'Please enter your password'
 	},
 	name: {
 		type: String,
 		required: false,
 		trim: true
 	},
-	admin: Boolean,
 	resetPasswordToken: String,
 	resetPasswordExpires: Date
 });
@@ -36,7 +35,7 @@ userSchema.pre('save', function (next) {
             if (err) {
                 return next(err);
             }
-            bcrypt.hash(user.password, salt, null, function (err, hash) {
+            bcrypt.hash(user.password, salt, function (err, hash) {
                 if (err) {
                     return next(err);
                 }
