@@ -8,7 +8,7 @@ import uuid from 'uuid';
 const multerOptions = {
 	storage: multer.memoryStorage(),
 	fileFilter(req, file, next){
-		console.log(file)
+		// console.log(file)
 		const isPhoto = file.mimetype.startsWith('image/');
 		if(isPhoto){
 			next(null, true);
@@ -21,7 +21,7 @@ const multerOptions = {
 exports.upload = multer(multerOptions).single('photo');
 
 exports.resize = async(req, res, next) => {
-	console.log(req)
+	// console.log(req)
 	if(!req.file){
 		next();
 		return;

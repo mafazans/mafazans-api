@@ -32,8 +32,9 @@ app.use('/', routes);
 app.use('/api', apiRoutes);
 app.use('/api/auth', userRoutes);
 
-//mongo error handling middleware
+//error handling middleware
 app.use(errorHandlers.notFound);
 app.use(errorHandlers.mongoError);
+app.use(errorHandlers.authError);
 
 module.exports = app;
