@@ -4,7 +4,7 @@ import { comparePassword } from '../models/User';
 import jwt from 'jsonwebtoken';
 
 exports.signup = async (req, res, next) => {
-	const user = await User.find({ email: req.body.email });
+	const user = await User.findOne({ email: req.body.email });
 	if (user.length >= 1) {
 		return res.status(409).json({
 			message: "Mail exists"
