@@ -11,7 +11,7 @@ exports.signup = async (req, res, next) => {
 		});
 	} else {
 		const user = await new User(req.body).save();
-		res.status(201).json({ status: true, message: { user } });
+		res.status(201).json({ status: true, message: 'Register Success!' });
 	};
 };
 
