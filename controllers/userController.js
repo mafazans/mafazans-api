@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken';
 
 exports.signup = async (req, res, next) => {
 	const user = await User.findOne({ email: req.body.email });
-	if (user.length >= 1) {
+	if (user) {
 		return res.status(409).json({
 			message: "Mail exists"
 		});
@@ -22,7 +22,7 @@ exports.deleteUser = async (req, res, next) => {
 
 exports.login = async (req, res, next) => {
 	const user = await (User.findOne({ email: req.body.email }));
-	if(user.length < 1) {
+	if(!user) {
 		return res.status(401).json({
 			status: false,
 			message: 'Auth failed'
